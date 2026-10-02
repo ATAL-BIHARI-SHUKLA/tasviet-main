@@ -6,8 +6,8 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Google Apps Script Web App URL - Replace with your actual URL
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgPrc4ji_Wyx-MwDma3w_pLdPcPDWbtvmk3314XyZVzsSGjNROYtQ2yjbVzNj6o-MyuQ/exec';
+// Google Apps Script Web App URL - Loaded from .env to keep it private
+const APPS_SCRIPT_URL = process.env.APPS_SCRIPT_URL;
 
 // Upload file to Google Drive via Google Apps Script proxy
 async function uploadToCloudStorage(fileObject, folderPath = '') {

@@ -55,6 +55,13 @@ app.use('/api/files', fileRouter);
 app.get('/', (req, res) => {
     res.send('Welcome to the Tasviet Backend API');
 });
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+
+// Vercel serverless functions don't need app.listen()
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}
+
+// Export the Express API for Vercel
+export default app;

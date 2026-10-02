@@ -1,0 +1,36 @@
+```
+totalAmountRequested  - Original amount calculated from employee expenses
+finalAmount          - Final amount after admin review (used by all users)
+adminReview.adjustedAmount - Admin's adjusted amount (if different from original)
+adminReview.editedExpenses - Admin's edited version of expenses (preserves originals)
+```
+
+## 💡 **Key Benefits**
+
+1. **Data Integrity**
+   - Original expense data is never modified
+   - Admin changes are tracked separately
+   - Complete audit trail for all adjustments
+
+2. **User Experience**
+   - Employees see both original and adjusted amounts
+   - Management sees simplified view with only final amounts
+   - Admins have complete control over adjustments
+
+3. **Transparency**
+   - Employees can see when their requests are adjusted
+   - Admin notes explain adjustment reasons
+   - CSV exports include both original and adjusted amounts
+
+4. **Workflow Optimization**
+   - Management and accounting focus only on final amounts
+   - Streamlined decision-making and payment processes
+   - Less confusion about which amount to approve/pay
+
+---
+
+## 🚀 **Next Steps**
+
+- Add notification system for amount adjustments
+- Create reporting dashboard for adjustment patterns
+- Implement detailed adjustment history visualization

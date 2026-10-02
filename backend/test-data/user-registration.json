@@ -1,0 +1,100 @@
+{
+  "testUsers": [
+    {
+      "description": "Valid Employee User",
+      "payload": {
+        "displayName": "Test Employee",
+        "email": "employee@tasviet.com",
+        "password": "12345678",
+        "userType": "employee"
+      },
+      "expectedStatus": 201
+    },
+    {
+      "description": "Valid Admin User",
+      "payload": {
+        "displayName": "Admin User",
+        "email": "admin@tasviet.com",
+        "password": "12345678",
+        "userType": "admin"
+      },
+      "expectedStatus": 201
+    },
+    {
+      "description": "Valid Accountant User",
+      "payload": {
+        "displayName": "Finance Manager",
+        "email": "accountant@tasviet.com",
+        "password": "12345678",
+        "userType": "accountant"
+      },
+      "expectedStatus": 201
+    },
+    {
+      "description": "Valid Management User",
+      "payload": {
+        "displayName": "Department Manager",
+        "email": "manager@tasviet.com",
+        "password": "12345678",
+        "userType": "management"
+      },
+      "expectedStatus": 201
+    },
+    {
+      "description": "Missing Display Name",
+      "payload": {
+        "email": "invalid@tasviet.com",
+        "password": "Password123!",
+        "userType": "employee"
+      },
+      "expectedStatus": 400,
+      "expectedMessage": "All fields are required"
+    },
+    {
+      "description": "Missing Email",
+      "payload": {
+        "displayName": "Invalid User",
+        "password": "Password123!",
+        "userType": "employee"
+      },
+      "expectedStatus": 400,
+      "expectedMessage": "All fields are required"
+    },
+    {
+      "description": "Missing Password",
+      "payload": {
+        "displayName": "Invalid User",
+        "email": "invalid@tasviet.com",
+        "userType": "employee"
+      },
+      "expectedStatus": 400,
+      "expectedMessage": "All fields are required"
+    },
+    {
+      "description": "Missing User Type",
+      "payload": {
+        "displayName": "Invalid User",
+        "email": "invalid@tasviet.com",
+        "password": "Password123!"
+      },
+      "expectedStatus": 400,
+      "expectedMessage": "All fields are required"
+    },
+    {
+      "description": "Invalid User Type",
+      "payload": {
+        "displayName": "Invalid User",
+        "email": "invalid@tasviet.com",
+        "password": "Password123!",
+        "userType": "customer"
+      },
+      "expectedStatus": 400,
+      "expectedMessage": "Invalid user type"
+    }
+  ],
+  "instructions": {
+    "usage": "This file contains sample JSON payloads for testing the user registration endpoint at POST /api/auth/register",
+    "howToUse": "Import this file into Postman or use with a REST client to test your registration endpoint",
+    "note": "After testing with a user, you may need to delete that user from your database before trying again with the same email"
+  }
+}
